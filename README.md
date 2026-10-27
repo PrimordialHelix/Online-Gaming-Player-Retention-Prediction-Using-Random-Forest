@@ -1,6 +1,7 @@
 # 🎮 Online Gaming Player Retention Prediction
 
 [![Python Version](https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit App](https://img.shields.io/badge/Streamlit-Live%20Platform-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter&logoColor=white)](https://jupyter.org/)
 [![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.4%2B-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
 [![Primary Metric: Accuracy](https://img.shields.io/badge/Test%20Accuracy-77.00%25-brightgreen)](https://scikit-learn.org/)
@@ -279,11 +280,19 @@ How game development studios translate these findings into live operations:
 ## 📁 Repository Structure
 
 ```
-online-gaming-player-retention/
+Online-Gaming-Player-Retention-Prediction-Using-Random-Forest/
 │
+├── desktop_gui.py                         # Native Windows Desktop GUI Application (CustomTkinter)
+├── desktop_launcher.py                    # Standalone Desktop Application Window Wrapper
+├── Launch_Native_GUI.bat                  # 1-Click Launcher for Native CustomTkinter GUI App
+├── Launch_Desktop_App.bat                 # 1-Click Launcher for Standalone Desktop Window App
+├── app.py                                 # Streamlit AI Platform (Emerald-Gold Theme & Animations)
+├── run_app.bat                            # 1-Click Browser Launcher for Streamlit App
 ├── online_gaming_player_retention.ipynb   # Complete, fully executed 15-section Jupyter Notebook
 ├── gaming_player_retention_dataset.csv    # 1,000-record behavioral player retention dataset
-└── README.md                             # Comprehensive project documentation & guide
+├── .streamlit/
+│   └── config.toml                        # Theme configuration (Emerald, Gold, Obsidian Black)
+└── README.md                              # Comprehensive project documentation & guide
 ```
 
 ---
@@ -291,32 +300,41 @@ online-gaming-player-retention/
 ## 🚀 Installation & Quickstart
 
 ### Prerequisites
-- Python 3.9 or higher
-- Jupyter Notebook, JupyterLab, or VS Code with Jupyter extension (or Google Colab)
+- Python 3.9, 3.10, or 3.11
+- Windows 10 or 11
 
-### 1. Clone the Repository
+### 1. Launch as a Desktop Application
+
+You have two powerful application modes available:
+
+#### Mode A: Standalone Animated Desktop Window Application (Recommended)
+Launches the full Emerald-Gold animated platform inside its own dedicated borderless desktop application window (zero URL bar, isolated window chrome, native taskbar integration):
+- **1-Click**: Double-click **`Launch_Desktop_App.bat`**
+- **Or via Terminal**:
+  ```bash
+  python desktop_launcher.py
+  ```
+
+#### Mode B: Native Windows CustomTkinter Desktop GUI
+Launches the pure native Windows desktop GUI application with custom sliders, real-time prediction gauge, and embedded radar telemetry canvas:
+- **1-Click**: Double-click **`Launch_Native_GUI.bat`**
+- **Or via Terminal**:
+  ```bash
+  python desktop_gui.py
+  ```
+
+---
+
+### 2. Launch in Web Browser Mode
+Double-click **`run_app.bat`** or run:
 ```bash
-git clone https://github.com/your-username/online-gaming-player-retention.git
-cd online-gaming-player-retention
+streamlit run app.py
 ```
+Open **`http://localhost:8501`** in your browser.
 
-### 2. Set Up a Virtual Environment (Recommended)
-```bash
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+---
 
-# Windows (PowerShell)
-py -3.11 -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-### 3. Install Dependencies
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-```
-
-### 4. Launch the Notebook
+### 3. Launch the Jupyter Notebook
 ```bash
 jupyter notebook online_gaming_player_retention.ipynb
 ```
